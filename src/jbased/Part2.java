@@ -1,3 +1,5 @@
+package jbased;
+
 import java.util.Arrays;
 
 public class Part2 {

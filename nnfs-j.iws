@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7de1a1f2-022f-471d-807f-e203cee105d2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/kbased/P001BasicNeuron3Inputs.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/kbased/P002BasicNeuronLayer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/kbased/P003DotProduct.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nnfs-j.iml" beforeDir="false" afterPath="$PROJECT_DIR$/nnfs-j.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nnfs-j.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/nnfs-j.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nnfs-j.iws" beforeDir="false" afterPath="$PROJECT_DIR$/nnfs-j.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/nnfs-j/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbased/Part1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbased/Part2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Part3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbased/Part3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -29,7 +37,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.40954095" />
   </component>
@@ -38,17 +46,9 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Part3">
-    <configuration name="Part1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Part1" />
-      <module name="nnfs-j" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Kotlin.kbased.P003DotProductKt">
     <configuration name="Part2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Part2" />
+      <option name="MAIN_CLASS_NAME" value="jbased.Part2" />
       <module name="nnfs-j" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -56,7 +56,7 @@
       </method>
     </configuration>
     <configuration name="Part3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Part3" />
+      <option name="MAIN_CLASS_NAME" value="jbased.Part3" />
       <module name="nnfs-j" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -76,6 +76,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="kbased.P001BasicNeuron3InputsKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="nnfs-j" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="kbased.P001BasicNeuron3InputsKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="kbased.P002BasicNeuronLayerKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="nnfs-j" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="kbased.P002BasicNeuronLayerKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="kbased.P003DotProductKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="nnfs-j" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="kbased.P003DotProductKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -87,9 +126,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.kbased.P003DotProductKt" />
+        <item itemvalue="Kotlin.kbased.P002BasicNeuronLayerKt" />
+        <item itemvalue="Kotlin.kbased.P001BasicNeuron3InputsKt" />
         <item itemvalue="Application.Part3" />
         <item itemvalue="Application.Part2" />
-        <item itemvalue="Application.Part1" />
       </list>
     </recent_temporary>
   </component>
@@ -118,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587184442885</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary=".">
+      <created>1587793695961</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587793695961</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -127,26 +175,30 @@
     <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1587184441772">
+    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1587793694826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587184441772" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1587793689110">
+    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587793694826" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1588007847877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587793689110" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1587793689109">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588007847877" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1588007847877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587793689109" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1587793689109">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588007847877" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1588007847877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587793689109" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1587793689110">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588007847877" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1588007847877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587793689110" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588007847877" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1588007424430">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588007424430" />
     <state x="656" y="252" width="607" height="536" key="find.popup" timestamp="1587184367607">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
