@@ -17,7 +17,7 @@ public class Part3 {
         System.out.println(Arrays.toString(add(dotProduct(weights, inputs), biases)));
     }
 
-    private static double[] dotProduct(double[][] input1, double[] input2) {
+    public static double[] dotProduct(double[][] input1, double[] input2) {
         double[] outputs = new double[input1.length];
 
         for (int i = 0; i < input1.length; i++) {
@@ -31,7 +31,21 @@ public class Part3 {
         return outputs;
     }
 
-    private static double[] add(double[] input1, double[] input2) {
+    public static double[][] dotProduct(double[][] input1, double[][] input2) {
+        double[][] outputs = new double[input1.length][input1[0].length];
+
+        for (int i = 0; i < input1.length; i++) {
+            double output = 0;
+            for (int j = 0; j < input2.length; j++) {
+                output += input1[i][j] * input2[j][i];
+            }
+            outputs[i] = output;
+        }
+
+        return outputs;
+    }
+
+    public static double[] add(double[] input1, double[] input2) {
         double[] output = new double[input1.length];
 
         for (int i = 0; i < input1.length; i++) {
