@@ -33,7 +33,7 @@ public class Part4 {
         return a;
     }
 
-    public static Double[][] multiplicar(Double[][] A, Double[][] B) {
+    public static double[][] multiplicar(double[][] A, double[][] B) {
         int aRows = A.length;
         int aColumns = A[0].length;
         int bRows = B.length;
@@ -42,7 +42,7 @@ public class Part4 {
             throw new IllegalArgumentException("A:Rows: " + aColumns + " did not match B:Columns " + bRows + ".");
         }
 
-        Double[][] C = new Double[aRows][bColumns];
+        double[][] C = new double[aRows][bColumns];
         for (int i = 0; i < aRows; i++) {
             for (int j = 0; j < bColumns; j++) {
                 C[i][j] = 0.00000;

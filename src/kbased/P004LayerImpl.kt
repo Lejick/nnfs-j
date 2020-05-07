@@ -36,7 +36,7 @@ fun multiplicar(A: Array<Array<Double>>, B: Array<Array<Double>>): Array<Array<D
     val bRows = B.size
     val bColumns: Int = B[0].size
     require(aColumns == bRows) { "A:Rows: $aColumns did not match B:Columns $bRows." }
-    val c = Array(aRows) { arrayOfNulls<Double>(bColumns) }
+    var c = arrayOf<Array<Double>>()
     for (i in 0 until aRows) {
         for (j in 0 until bColumns) {
             c[i][j] = 0.00000
@@ -52,19 +52,12 @@ fun multiplicar(A: Array<Array<Double>>, B: Array<Array<Double>>): Array<Array<D
     return c
 }
 
-}
+internal abstract class LayerDense(n_inputs: Int, n_neurons: Int) {
+    var weights: Array<DoubleArray> = Part4.generateMatrix(n_inputs, n_neurons)
+    var biases: Array<DoubleArray?> = arrayOfNulls(n_neurons)
+    abstract var output: Array<DoubleArray>
 
-internal class LayerDense(n_inputs: Int, n_neurons: Int) {
-    var output: Array<DoubleArray>
-    var weights: Array<DoubleArray>
-    var biases: Array<DoubleArray>
-
-    fun forward(inputs: Array<DoubleArray?>?, weights: Array<DoubleArray?>?) {
+    fun forward(inputs: Array<DoubleArray>, weights: Array<DoubleArray>) {
         output = Part3.dotProduct(inputs, weights)
-    }
-
-    init {
-        weights = Part4.generateMatrix(n_inputs, n_neurons)
-        biases = arrayOfNulls(n_neurons)
     }
 }
