@@ -1,5 +1,3 @@
-import jbased.Part3
-import jbased.Part4
 import java.util.*
 
 fun main(args: Array<String>) {
@@ -50,14 +48,4 @@ fun multiplicar(A: Array<Array<Double>>, B: Array<Array<Double>>): Array<Array<D
         }
     }
     return c
-}
-
-internal abstract class LayerDense(n_inputs: Int, n_neurons: Int) {
-    var weights: Array<DoubleArray> = Part4.generateMatrix(n_inputs, n_neurons)
-    var biases: Array<DoubleArray?> = arrayOfNulls(n_neurons)
-    abstract var output: Array<DoubleArray>
-
-    fun forward(inputs: Array<DoubleArray>, weights: Array<DoubleArray>) {
-        output = Part3.dotProduct(inputs, weights)
-    }
 }
