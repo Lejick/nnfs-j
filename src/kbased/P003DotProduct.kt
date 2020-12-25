@@ -24,7 +24,7 @@ fun dotProduct(input1: Array<DoubleArray>, input2: DoubleArray): DoubleArray {
     return outputs
 }
 
-fun dotProduct(input1: Array<DoubleArray>, input2: Array<DoubleArray>): Array<DoubleArray>? {
+fun dotProduct(input1: Array<DoubleArray>, input2: Array<DoubleArray>): Array<DoubleArray> {
     val result = Array(input1.size) { DoubleArray(input2[0].size) }
     for (i in input1.indices) {
         for (j in 0 until input2[0].size) {

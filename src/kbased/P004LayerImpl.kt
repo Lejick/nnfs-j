@@ -5,7 +5,7 @@ fun main(args: Array<String>) {
     generateMatrix(3, 5)
 }
 
-fun generateMatrix(m: Int, n: Int): Array<DoubleArray>? {
+fun generateMatrix(m: Int, n: Int): Array<DoubleArray> {
     val r = Random()
     val a = Array(m) { DoubleArray(n) }
     for (i in 0 until m) {

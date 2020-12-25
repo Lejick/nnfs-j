@@ -16,9 +16,9 @@ public class Part4 {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 a[i][j] = r.nextDouble();
-                System.out.print(a[i][j] + "\t");
+              //  System.out.print(a[i][j] + "\t");
             }
-            System.out.println();
+        //    System.out.println();
         }
         return a;
     }
@@ -28,7 +28,7 @@ public class Part4 {
         double[] a = new double[n];
         for (int i = 0; i < n; i++) {
             a[i] = r.nextDouble();
-            System.out.print(a[i] + " ");
+          //  System.out.print(a[i] + " ");
         }
         return a;
     }

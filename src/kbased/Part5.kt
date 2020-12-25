@@ -1,8 +1,6 @@
 package kbased
 
-
-object Part5 {
-    @JvmStatic
+class Part5 {
     fun main(args: Array<String>) {
         val sd = SpiralData()
         sd.createData(100, 3)
@@ -12,6 +10,8 @@ object Part5 {
         val activation1 = ActivationRelu()
         layer1.forward(x)
         activation1.forward(layer1.output)
-        println(activation1.output)
+        /*  for(c in activation1.output){
+              println( c.contentToString())
+          }*/
     }
 }
