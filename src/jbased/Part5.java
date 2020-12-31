@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class Part5 {
     public static void main(String[] args) throws IOException {
@@ -17,7 +18,7 @@ public class Part5 {
         ActivationRelu activation1 = new ActivationRelu();
         layer1.forward(x);
         activation1.forward(layer1.output);
-        System.out.println(activation1.output);
+        System.out.println(Arrays.toString(activation1.output));
 
     }
 
