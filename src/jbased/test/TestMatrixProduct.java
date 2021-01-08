@@ -1,7 +1,6 @@
 package jbased.test;
 
 import jbased.Part4;
-
 public class TestMatrixProduct {
 
     public static void main(String[] args) {

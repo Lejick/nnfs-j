@@ -34,18 +34,10 @@ public class Part3 {
     }
 
     public static double[][] dotProduct(double[][] input1, double[][] input2) {
-        INDArray nd1= Nd4j.create(input1);
-        INDArray nd2= Nd4j.create(input2);
-      //  INDArray ndRes=nd1.mul(nd2);
-        double[][] result = new double[input1.length][input2[0].length];
-        for (int i = 0; i < input1.length; i++) {
-            for (int j = 0; j < input2[0].length; j++) {
-                for (int k = 0; k < input1[0].length; k++) {
-                    result[i][j] += input1[i][k] * input2[k][j];
-                }
-            }
-        }
-        return result;
+        INDArray nd1 = Nd4j.create(input1);
+        INDArray nd2 = Nd4j.create(input2);
+        INDArray ndRes = nd1.mmul(nd2);
+        return ndRes.toDoubleMatrix();
     }
 
 

@@ -18,7 +18,7 @@ public class Part5 {
         ActivationRelu activation1 = new ActivationRelu();
         layer1.forward(x);
         activation1.forward(layer1.output);
-        System.out.println(Arrays.toString(activation1.output));
+        System.out.println(Arrays.deepToString(activation1.output));
 
     }
 
