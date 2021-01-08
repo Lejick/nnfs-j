@@ -8,15 +8,12 @@ import java.util.Arrays;
 public class Part3 {
     public static void main(String[] args) {
         double[] inputs = {1.0, 2.0, 3.0, 2.5};
-
         double[][] weights = {
                 {0.2, 0.8, -0.5, 1},
                 {.5, -0.91, 0.26, -0.5},
                 {-0.26, -0.27, 0.17, 0.87}
         };
-
         double[] biases = {2, 3, 0.5};
-
         System.out.println(Arrays.toString(add(dotProduct(weights, inputs), biases)));
     }
 
