@@ -1,6 +1,6 @@
 package kbased
 
-fun main(args: Array<String>) {
+fun main() {
     val sd = SpiralData()
     sd.createData(100, 3)
     val x = sd.x

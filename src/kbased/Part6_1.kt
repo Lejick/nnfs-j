@@ -1,5 +1,7 @@
 package kbased
-    fun main(args: Array<String>) {
+
+
+fun main() {
         val layer_outputs = doubleArrayOf(4.8, 1.21, 2.385)
 
         var expValues = layer_outputs.map { x: Double -> Math.exp(x) }
