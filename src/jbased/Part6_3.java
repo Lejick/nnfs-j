@@ -11,7 +11,7 @@ public class Part6_3 {
         LayerDense dense1 = new LayerDense(2, 3);
         ActivationRelu activation1 = new ActivationRelu();
         LayerDense dense2 = new LayerDense(3, 3);
-        ActivationSotmax activation2 = new ActivationSotmax();
+        ActivationSoftmax activation2 = new ActivationSoftmax();
         dense1.forward(X);
         activation1.forward(dense1.output);
         dense2.forward(activation1.output);

@@ -4,7 +4,7 @@ import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.ops.transforms.Transforms;
 
-public class ActivationSotmax {
+public class ActivationSoftmax {
     double[][] output;
 
     public void forward(double[][] inputs) {
