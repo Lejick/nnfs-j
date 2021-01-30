@@ -20,6 +20,7 @@ public class LambdaTest {
                 return 0;
             }
         };
+        Comparator<Integer> cmp3 = Integer::compare;
         Consumer methodHandle;
         System.out.println();
     }
@@ -61,5 +62,9 @@ public class LambdaTest {
         Assert.assertEquals(tli.get(), (Integer) 1);
         tli=ThreadLocal.withInitial(counter::incrementAndGet);
         Assert.assertEquals(tli.get(), (Integer) 2);
+    }
+    @Test
+    public void test7() {
+
     }
 }
