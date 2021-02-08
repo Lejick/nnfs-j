@@ -67,4 +67,8 @@ public class LambdaTest {
     public void test7() {
 
     }
+
+    public static class Record {
+        int x;
+    }
 }

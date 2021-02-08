@@ -1,4 +1,4 @@
-package jbased.test;
+package jbased.test.shortlink;
 
 import java.util.HashMap;
 import java.util.Map;

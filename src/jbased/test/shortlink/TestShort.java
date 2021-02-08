@@ -1,10 +1,7 @@
-package jbased.test;
+package jbased.test.shortlink;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class TestShort {
 
@@ -29,18 +26,6 @@ public class TestShort {
         Assert.assertEquals(shortUrl.getLongUrl(shortUrl.baseUrl + "word3"), null);
     }
 
-    @Test
-    public void test3() {
-        Point x = new Point(0, 0);
-        Point a = new Point(1, 1);
-        Point b = new Point(-1, 0);
-        Point c = new Point(2, 1);
-        List<Point> list = new ArrayList<>();
-        list.add(a);
-        list.add(b);
-        list.add(c);
-        List<Point> resultList = KClosest.find(list, x, 2);
-        System.out.println();
-    }
+
 
 }
