@@ -2,6 +2,8 @@ package jbased.test;
 
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class KClosest {
 
@@ -10,7 +12,11 @@ public class KClosest {
         for (Point p : inputList) {
             map.put(p, Math.sqrt(Math.pow(p.x - x.x, 2) + Math.pow(p.y - x.y, 2)));
         }
-        return inputList;
+        Stream<Point> sorted =
+                map.entrySet().stream()
+                        .sorted(Map.Entry.comparingByValue()).
+                        limit(k).map(pointDoubleEntry -> pointDoubleEntry.getKey());
+        return sorted.collect(Collectors.toList());
     }
 
 }
