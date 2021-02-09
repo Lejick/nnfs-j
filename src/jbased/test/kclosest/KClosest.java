@@ -5,13 +5,20 @@ import java.util.*;
 
 public class KClosest {
     private Point[] sharedArray;
-    private PriorityQueue priorityQueue = new PriorityQueue();
+    private Point vertex;
+    private PriorityQueue<Point> priorityQueue = new PriorityQueue(new Comparator<Point>() {
+        @Override
+        public int compare(Point o1, Point o2) {
+            return o1.distance(vertex) > o2.distance(vertex) ? -1 : 1;
+        }
+    });
 
-    public KClosest(int k) {
+    public KClosest(int k, Point vertex) {
         sharedArray = new Point[k];
+        this.vertex = vertex;
     }
 
-    public Point[] findAllArray(List<Point> inputList, Point x) {
+    public Point[] findAllArray(List<Point> inputList) {
         for (int i = 0; i < inputList.size(); i++) {
             Point newPoint = inputList.get(i);
             if (i < sharedArray.length) {
@@ -19,7 +26,7 @@ public class KClosest {
                 continue;
             }
             for (int j = 0; j < sharedArray.length; j++) {
-                if (newPoint.distance(x) < sharedArray[j].distance(x)) {
+                if (newPoint.distance(vertex) < sharedArray[j].distance(vertex)) {
                     sharedArray[j] = newPoint;
                     continue;
                 }
@@ -28,6 +35,16 @@ public class KClosest {
         return sharedArray;
     }
 
+    public Point[] findAllQueue(List<Point> inputList) {
+        Point[] result = new Point[sharedArray.length];
+        for (Point p : inputList) {
+            priorityQueue.add(p);
+        }
+        for (int i = 0; i < result.length; i++) {
+            result[i] = priorityQueue.poll();
+        }
+        return result;
+    }
 
     public Point[] findFixedArray(Point newPoint, Point x) {
         for (int i = 0; i < sharedArray.length; i++) {
@@ -45,26 +62,14 @@ public class KClosest {
         return sharedArray;
     }
 
-}
+    public Point[] findFixedQueue(Point newPoint) {
+        Point[] result = new Point[sharedArray.length];
+        priorityQueue.add(newPoint);
+        for (int i = 0; i < result.length; i++) {
+            result[i] = priorityQueue.poll();
+        }
+        return result;
 
-class Point {
-    Double x;
-    Double y;
-
-    public Point(Double x, Double y) {
-        this.x = x;
-        this.y = y;
     }
 
-    @Override
-    public String toString() {
-        return "Point{" +
-                "x=" + x +
-                ", y=" + y +
-                '}';
-    }
-
-    public Double distance(Point other) {
-        return Math.sqrt(Math.pow(other.x - x, 2) + Math.pow(other.y - y, 2));
-    }
 }
