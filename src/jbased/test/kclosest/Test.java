@@ -21,30 +21,12 @@ public class Test {
         list.add(b);
         list.add(c);
         KClosest kClosest = new KClosest(2);
-        List<Point> resultList = kClosest.findStreamStyle(list, x);
-        System.out.println(resultList);
+        Point[] resuls = kClosest.findAll(list, x);
+        System.out.println(Arrays.toString(resuls));
     }
 
     @org.junit.jupiter.api.Test
     public void test2() {
-        KClosest kClosest = new KClosest(k);
-        Random rand = new Random();
-        while (true) {
-            Stream.generate(() -> new Point(rand.nextDouble() * 100, rand.nextDouble() * 100)).forEach(point -> {
-                List<Point> resultList = kClosest.findOnceStreamStyle(point, x);
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                System.out.println(resultList);
-            });
-        }
-    }
-
-    @org.junit.jupiter.api.Test
-    public void test3() {
 
         Random rand = new Random();
         KClosest kClosest = new KClosest(k);

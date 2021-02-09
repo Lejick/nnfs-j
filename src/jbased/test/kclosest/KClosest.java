@@ -2,11 +2,7 @@ package jbased.test.kclosest;
 
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 public class KClosest {
-    private Map<Point, Double> sharedMap = new HashMap<>();
     private Point[] sharedArray;
     private int capacity;
 
@@ -15,26 +11,23 @@ public class KClosest {
         capacity = k;
     }
 
-    public List<Point> findStreamStyle(List<Point> inputList, Point x) {
-        Map<Point, Double> map = new HashMap<>();
-        for (Point p : inputList) {
-            map.put(p, x.distance(p));
+    public Point[] findAll(List<Point> inputList, Point x) {
+        for (int i = 0; i < inputList.size(); i++) {
+            Point newPoint = inputList.get(i);
+            if (i < sharedArray.length) {
+                sharedArray[i] = newPoint;
+                continue;
+            }
+            for (int j = 0; j < sharedArray.length; j++) {
+                if (newPoint.distance(x) < sharedArray[j].distance(x)) {
+                    sharedArray[j] = newPoint;
+                    continue;
+                }
+            }
         }
-        Stream<Point> sorted =
-                map.entrySet().stream()
-                        .sorted(Map.Entry.comparingByValue()).
-                        limit(capacity).map(pointDoubleEntry -> pointDoubleEntry.getKey());
-        return sorted.collect(Collectors.toList());
+        return sharedArray;
     }
 
-    public List<Point> findOnceStreamStyle(Point newPoint, Point x) {
-        sharedMap.put(newPoint, x.distance(newPoint));
-        Stream<Point> sorted =
-                sharedMap.entrySet().stream()
-                        .sorted(Map.Entry.comparingByValue()).
-                        limit(capacity).map(pointDoubleEntry -> pointDoubleEntry.getKey());
-        return sorted.collect(Collectors.toList());
-    }
 
     public Point[] findFixedArray(Point newPoint, Point x) {
         for (int i = 0; i < sharedArray.length; i++) {
