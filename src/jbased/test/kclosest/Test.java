@@ -21,7 +21,7 @@ public class Test {
         list.add(b);
         list.add(c);
         KClosest kClosest = new KClosest(2);
-        Point[] resuls = kClosest.findAll(list, x);
+        Point[] resuls = kClosest.findAllArray(list, x);
         System.out.println(Arrays.toString(resuls));
     }
 

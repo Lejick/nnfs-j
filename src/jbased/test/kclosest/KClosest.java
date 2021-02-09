@@ -2,16 +2,16 @@ package jbased.test.kclosest;
 
 
 import java.util.*;
+
 public class KClosest {
     private Point[] sharedArray;
-    private int capacity;
+    private PriorityQueue priorityQueue = new PriorityQueue();
 
     public KClosest(int k) {
         sharedArray = new Point[k];
-        capacity = k;
     }
 
-    public Point[] findAll(List<Point> inputList, Point x) {
+    public Point[] findAllArray(List<Point> inputList, Point x) {
         for (int i = 0; i < inputList.size(); i++) {
             Point newPoint = inputList.get(i);
             if (i < sharedArray.length) {
