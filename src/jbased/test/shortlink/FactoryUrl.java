@@ -1,7 +1,8 @@
 package jbased.test.shortlink;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class FactoryUrl {
 
@@ -15,8 +16,9 @@ public class FactoryUrl {
 }
 
 class UrlServiceImpl1 extends AbstractUrlService {
+
     String baseUrl = "http://short1.com/";
-    protected static volatile int index = 1;
+    protected static AtomicInteger index= new AtomicInteger(0);
 
     @Override
     public String getBasedUrl() {
@@ -25,17 +27,17 @@ class UrlServiceImpl1 extends AbstractUrlService {
 
     @Override
     protected synchronized int getNextIndex() {
-        return index++;
+        return index.incrementAndGet();
     }
 }
 
 class UrlServiceImpl2 extends AbstractUrlService {
-    protected static volatile int index = 1;
+    protected static AtomicInteger index= new AtomicInteger(0);
     String baseUrl = "http://short2.com/";
 
     @Override
     protected synchronized int getNextIndex() {
-        return index++;
+        return index.incrementAndGet();
     }
 
     @Override
@@ -46,7 +48,7 @@ class UrlServiceImpl2 extends AbstractUrlService {
 
 abstract class AbstractUrlService {
 
-    protected Map<String, String> shortMap = new HashMap<>();
+    protected static Map<String, String> shortMap = new ConcurrentHashMap<>();
 
     protected abstract String getBasedUrl();
 

@@ -28,17 +28,24 @@ public class TestShort {
 
     @Test
     public void test3() {
-        AbstractUrlService shortUrl1= new FactoryUrl().getInstance1();
-        AbstractUrlService shortUrl2= new FactoryUrl().getInstance2();
+        AbstractUrlService shortUrl1 = new FactoryUrl().getInstance1();
+        AbstractUrlService shortUrl2 = new FactoryUrl().getInstance2();
         String key1 = shortUrl1.putURL(" http://looooong.com/aaa");
         String key2 = shortUrl2.putURL(" http://looooong.com/bbb");
         Assert.assertEquals(shortUrl1.getLongUrl(key1), " http://looooong.com/aaa");
         Assert.assertEquals(shortUrl2.getLongUrl(key2), " http://looooong.com/bbb");
-        Assert.assertEquals(shortUrl1.getBasedUrl()+"1",key1 );
-        Assert.assertEquals(shortUrl2.getBasedUrl()+"1", key2);
-        Assert.assertEquals(shortUrl1.getLongUrl( "word3"), null);
-    }
+        Assert.assertEquals(shortUrl1.getBasedUrl() + "1", key1);
+        Assert.assertEquals(shortUrl2.getBasedUrl() + "1", key2);
 
+        key1 = shortUrl1.putURL(" http://looooong.com/aaa");
+        key2 = shortUrl2.putURL(" http://looooong.com/bbb");
+        Assert.assertEquals(shortUrl1.getLongUrl(key1), " http://looooong.com/aaa");
+        Assert.assertEquals(shortUrl2.getLongUrl(key2), " http://looooong.com/bbb");
+        Assert.assertEquals(shortUrl1.getBasedUrl() + "2", key1);
+        Assert.assertEquals(shortUrl2.getBasedUrl() + "2", key2);
+
+        Assert.assertEquals(shortUrl1.getLongUrl("word3"), null);
+    }
 
 
 }
