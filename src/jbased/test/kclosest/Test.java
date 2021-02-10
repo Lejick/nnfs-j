@@ -67,7 +67,7 @@ public class Test {
             Stream.generate(() -> new Point(rand.nextDouble() * 100, rand.nextDouble() * 100)).forEach(point -> {
                 Point[] resultArray = kClosest.findFixedQueue(point);
                 try {
-                    Thread.sleep(10);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

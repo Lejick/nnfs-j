@@ -9,7 +9,7 @@ public class KClosest {
     private PriorityQueue<Point> priorityQueue = new PriorityQueue(new Comparator<Point>() {
         @Override
         public int compare(Point o1, Point o2) {
-            return o1.distance(vertex) > o2.distance(vertex) ? -1 : 1;
+            return o1.distance(vertex) < o2.distance(vertex) ? -1 : 1;
         }
     });
 
@@ -40,8 +40,11 @@ public class KClosest {
         for (Point p : inputList) {
             priorityQueue.add(p);
         }
-        for (int i = 0; i < result.length; i++) {
-            result[i] = priorityQueue.poll();
+        int i = 0;
+        for (Point p : priorityQueue) {
+            result[i] = p;
+            i++;
+            if (i == result.length) break;
         }
         return result;
     }
@@ -65,11 +68,13 @@ public class KClosest {
     public Point[] findFixedQueue(Point newPoint) {
         Point[] result = new Point[sharedArray.length];
         priorityQueue.add(newPoint);
-        for (int i = 0; i < result.length; i++) {
-            result[i] = priorityQueue.poll();
+        int i = 0;
+        for (Point p : priorityQueue) {
+            result[i] = p;
+            i++;
+            if (i == result.length) break;
         }
         return result;
-
     }
 
 }
