@@ -18,7 +18,7 @@ public class FactoryUrl {
 class UrlServiceImpl1 extends AbstractUrlService {
 
     String baseUrl = "http://short1.com/";
-    protected static AtomicInteger index= new AtomicInteger(0);
+    protected static AtomicInteger index = new AtomicInteger(0);
 
     @Override
     public String getBasedUrl() {
@@ -32,7 +32,7 @@ class UrlServiceImpl1 extends AbstractUrlService {
 }
 
 class UrlServiceImpl2 extends AbstractUrlService {
-    protected static AtomicInteger index= new AtomicInteger(0);
+    protected static AtomicInteger index = new AtomicInteger(0);
     String baseUrl = "http://short2.com/";
 
     @Override

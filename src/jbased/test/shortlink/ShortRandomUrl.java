@@ -12,7 +12,6 @@ public class ShortRandomUrl {
 
     String putSeoURL(String sourceUrl) {
         Random rand = new Random();
-
         String code = "";
         for (int i = 0; i < 4; i++) {
             int index = rand.nextInt(seedChar.length);

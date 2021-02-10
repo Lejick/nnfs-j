@@ -5,25 +5,19 @@ import org.junit.jupiter.api.Test;
 
 public class TestShort {
 
-
     @Test
-    public void test1() {
+    public void test_seo_word_put() {
         ShortUrl shortUrl = new ShortUrl();
-        shortUrl.putSeoURL(" http://looooong.com/1", "word1");
-        shortUrl.putSeoURL(" http://looooong.com/2", "word2");
-        Assert.assertEquals(shortUrl.getLongUrl(shortUrl.baseUrl + "word1"), " http://looooong.com/1");
-        Assert.assertEquals(shortUrl.getLongUrl(shortUrl.baseUrl + "word2"), " http://looooong.com/2");
-        Assert.assertEquals(shortUrl.getLongUrl(shortUrl.baseUrl + "word3"), null);
+        String result = shortUrl.putSeoURL(" http://looooong.com/1", "word1");
+        Assert.assertEquals(shortUrl.baseUrl + "word1", result);
     }
 
     @Test
-    public void test2() {
+    public void test_random_put() {
         ShortRandomUrl shortUrl = new ShortRandomUrl();
-        String key1 = shortUrl.putSeoURL(" http://looooong.com/1");
-        String key2 = shortUrl.putSeoURL(" http://looooong.com/2");
-        Assert.assertEquals(shortUrl.getLongUrl(key1), " http://looooong.com/1");
-        Assert.assertEquals(shortUrl.getLongUrl(key2), " http://looooong.com/2");
-        Assert.assertEquals(shortUrl.getLongUrl(shortUrl.baseUrl + "word3"), null);
+        String sourceUrl = "http://looooong.com/1";
+        String key1 = shortUrl.putSeoURL(sourceUrl);
+        Assert.assertEquals(sourceUrl, shortUrl.getLongUrl(key1));
     }
 
     @Test
