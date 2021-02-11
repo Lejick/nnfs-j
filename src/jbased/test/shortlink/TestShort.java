@@ -1,9 +1,9 @@
 package jbased.test.shortlink;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.Test;
 
 public class TestShort {
 
@@ -21,12 +21,12 @@ public class TestShort {
         assertEquals("http://short.com/POTATO", result);
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void test_seo_exceed_symbols() {
         ShortUrl shortUrl = new ShortUrl();
-        Assertions.assertThrows(IllegalArgumentException.class, () -> { shortUrl.putSeoURL(" http://looooong.com/1", "word1sfsadfsfddsfsafdsafsdfsfdsfsadfdsadfsadf");
-        });
+        shortUrl.putSeoURL(" http://looooong.com/1", "word1sfsadfsfddsfsafdsafsdfsfdsfsadfdsadfsadf");
     }
+
 
     @Test
     public void test_random_put() {
