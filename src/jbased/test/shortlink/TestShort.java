@@ -4,7 +4,6 @@ package jbased.test.shortlink;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
-
 public class TestShort {
 
     @Test
@@ -37,7 +36,7 @@ public class TestShort {
     }
 
     @Test
-    public void test3() {
+    public void factory_generate_method() {
         AbstractUrlService shortUrl1 = new FactoryUrl().getInstance1();
         AbstractUrlService shortUrl2 = new FactoryUrl().getInstance2();
         String key1 = shortUrl1.putURL(" http://looooong.com/aaa");
@@ -53,8 +52,8 @@ public class TestShort {
         assertEquals(shortUrl2.getLongUrl(key2), " http://looooong.com/bbb");
         assertEquals(shortUrl1.getBasedUrl() + "2", key1);
         assertEquals(shortUrl2.getBasedUrl() + "2", key2);
-
         assertEquals(shortUrl1.getLongUrl("word3"), null);
+
     }
 
 

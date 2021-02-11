@@ -2,27 +2,28 @@ package jbased.test.shortlink;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 public class ShortRandomUrl {
-    char[] seedChar = "ABCDEFG1234567890".toCharArray();
+    public static String baseUrl = "http://short.com/";
+    public static int DEFAULT_COUNT_DIGITS = 4;
+    private int randomPathSize = DEFAULT_COUNT_DIGITS;
 
     Map<String, String> shortMap = new HashMap<>();
-    String baseUrl = "http://short.com/";
+
+    public ShortRandomUrl() {
+    }
+
+    public ShortRandomUrl(int randomPathSize) {
+        this.randomPathSize = randomPathSize;
+    }
 
     String putSeoURL(String sourceUrl) {
-        Random rand = new Random();
-        String code = "";
-        for (int i = 0; i < 4; i++) {
-            int index = rand.nextInt(seedChar.length);
-            code += seedChar[index];
-        }
-        shortMap.put(baseUrl + code, sourceUrl);
-        return baseUrl + code;
+        String generatedUrl = baseUrl + RandomSymbolsGenerator.generate(randomPathSize);
+        shortMap.put(generatedUrl, sourceUrl);
+        return generatedUrl;
     }
 
     String getLongUrl(String key) {
         return shortMap.get(key);
     }
-
 }
