@@ -1,5 +1,6 @@
 package jbased.test.shortlink;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -7,10 +8,24 @@ import static org.junit.Assert.assertEquals;
 public class TestShort {
 
     @Test
-    public void test_seo_word_put() {
+    public void test_seo_word_put_1() {
         ShortUrl shortUrl = new ShortUrl();
-        String result = shortUrl.putSeoURL(" http://looooong.com/1", "word1");
-        assertEquals(shortUrl.baseUrl + "word1", result);
+        String result = shortUrl.putSeoURL("http://looooong.com/somepath ", "MY-NEW-WS");
+        assertEquals("http://short.com/MY-NEW-WS", result);
+    }
+
+    @Test
+    public void test_seo_word_put_2() {
+        ShortUrl shortUrl = new ShortUrl();
+        String result = shortUrl.putSeoURL("http://looooong.com/somepath", "POTATO");
+        assertEquals("http://short.com/POTATO", result);
+    }
+
+    @Test
+    public void test_seo_exceed_symbols() {
+        ShortUrl shortUrl = new ShortUrl();
+        Assertions.assertThrows(IllegalArgumentException.class, () -> { shortUrl.putSeoURL(" http://looooong.com/1", "word1sfsadfsfddsfsafdsafsdfsfdsfsadfdsadfsadf");
+        });
     }
 
     @Test
